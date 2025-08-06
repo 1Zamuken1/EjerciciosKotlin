@@ -3,12 +3,14 @@ fun main(){
     println("1. Para ejercicio 1 - Nota del 0 al 100")
     println("2. Para ejercicio 2 - Edad y Nota para beca")
     println("3. Para ejercicio 3 - Estrato y tarifas")
+    println("4. Para ejercicio 4")
     var opcion = readln().toInt()
 
     var menu = when(opcion){
         1 -> ejercicio1()
         2 -> ejercicio2()
         3 -> ejercicio3()
+        4 -> ejercicio4()
         else -> "Ingrese una opción válida"
     }
 }
@@ -62,3 +64,5 @@ fun ejercicio3(){
         println("Mensaje: Debe pagar 25% de recargo")
     }
 }
+
+fun ejercicio4(){}
