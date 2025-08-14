@@ -1,4 +1,5 @@
 # EjerciciosKotlin
+<<<<<<< HEAD
 Ejercicios de Kotlin propuestos en clase
 
 ---
@@ -33,3 +34,9 @@ El objetivo es reforzar conceptos básicos de programación, estructuras de cont
 **Institución:** [`SENA - Centro de Servicios Financieros`]()  
 
 ---
+=======
+Ejercicios de Kotlin según los trabajos propuestos en el material en clase
+
+## Uso
+Ingresar por el menú y seleccionar el número según el ejercicio al que se desea ir. Al final se pedirá al usuario si desea regresar al menú para realizar otro ejercicio
+>>>>>>> 37ef50f872396f47d4283f35a5d1a4dd05ffbf7c
