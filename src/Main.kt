@@ -1,274 +1,89 @@
-fun main(){
-    println("+-----------------------------------------------------------------------+")
-    println("|        Ingrese el número para el ejercicio a realizar                 |")
-    println("+-----------------------------------------------------------------------+")
-    println("|   1. Para ejercicio 1 - Nota del 0 al 100                             |")
-    println("|   2. Para ejercicio 2 - Edad y Nota para beca                         |")
-    println("|   3. Para ejercicio 3 - Estrato y tarifas                             |")
-    println("|   4. Para ejercicio 4 - rango e nacimiento por DNI                    |")
-    println("|   5. Para ejercicio 5 - Puntaje según edad y nivel académico          |")
-    println("|   6. Para ejercicio 6 - Calculadora y verificar 0                     |")
-    println("|   7. Para ejercicio 7 - temperatura                                   |")
-    println("+-----------------------------------------------------------------------+")
-    print("Opción: ")
-    var opcion = readln().toInt()
+import ejerciciosCiclos.*
+import ejerciciosCondicionales.*
 
-    var menu = when(opcion){
-        1 -> ejercicio1()
-        2 -> ejercicio2()
-        3 -> ejercicio3()
-        4 -> ejercicio4()
-        5 -> ejercicio5()
-        6 -> ejercicio6()
-        7 -> ejercicio7()
-        else -> "Ingrese una opción válida"
-    }
-}
+fun main() {
+    var salir = false
 
-fun ejercicio1() {
-        print("Por favor ingrese una nota del 0 al 100: ")
-        var nota = readln().toInt()
+    while (!salir) {
+        println("+-----------------------------------------------------------------------+")
+        println("|     Ingrese qué ejercicios de los talleres desea ver                  |")
+        println("+-----------------------------------------------------------------------+")
+        println("|     1. Para taller de Condicionales | Fundamenteos 2                  |")
+        println("|     2. Para taller de ciclos        | Fundamenteos 3                  |")
+        println("|     3. Para salir del programa                                        |")
+        println("+-----------------------------------------------------------------------+")
+        print("Opción: ")
+        val opcion = readln().toInt()
 
-        var rango = when (nota) {
-            in 90..100 -> 'A'
-            in 80..90 -> 'B'
-            in 70..79 -> 'C'
-            in 60..69 -> 'D'
-            in 0..59 -> 'E'
-            else -> "Ingrese una nota válida"
-        }
-        println("Su nota de $nota corresponde a una calificación de: $rango")
+        when (opcion) {
+            1 -> {
+                var menuPrincipal1 = false
+                while (!menuPrincipal1) {
+                    println("+-----------------------------------------------------------------------+")
+                    println("|        Ingrese el número para el ejercicio a realizar                 |")
+                    println("+-----------------------------------------------------------------------+")
+                    println("|   1. Para ejercicio 1 - Nota del 0 al 100                             |")
+                    println("|   2. Para ejercicio 2 - Edad y Nota para beca                         |")
+                    println("|   3. Para ejercicio 3 - Estrato y tarifas                             |")
+                    println("|   4. Para ejercicio 4 - rango e nacimiento por DNI                    |")
+                    println("|   5. Para ejercicio 5 - Puntaje según edad y nivel académico          |")
+                    println("|   6. Para ejercicio 6 - Calculadora y verificar 0                     |")
+                    println("|   7. Para ejercicio 7 - temperatura                                   |")
+                    println("|   8. Volver al menú principal                                         |")
+                    println("+-----------------------------------------------------------------------+")
+                    print("Opción: ")
+                    val subOpcion = readln().toInt()
 
-        println("Deseas regresar al ménu?\n(Si / No)")
-        var menu = readln().toString().lowercase()
-        if (menu == "si"){
-            return main()
-        } else{
-            print("Fin del programa")
-        }
-}
-fun ejercicio2(){
-    print("Por favor ingrese su edad: ")
-    var edad = readln().toInt()
-    print("Por favor ingrese su nota: ")
-    var nota = readln().toInt()
-
-    if (edad in 18 .. 25 && nota in 80 .. 100){
-        println("Felicidades has obtenido tu beca")
-    } else{
-        println("Lo sentimos, no has alcanzado la beca, vuelve en otro momento")
-    }
-
-    println("Deseas regresar al ménu?\n(Si / No)")
-    var menu = readln().toString().lowercase()
-    if (menu == "si"){
-        return main()
-    } else{
-        print("Fin del programa")
-    }
-}
-
-fun ejercicio3(){
-    print("Valor a Cancelar: ")
-    var valor = readln().toDouble()
-
-    print("Por favor ingrese su estrato del 1 al 6: ")
-    var estrato = readln().toInt()
-
-    if (estrato in 1 .. 2){
-        var valCancelar = valor * 0.50
-        println("Valor total a cancelar: $valCancelar")
-        println("Mensaje: Obtiene el 50% de descuento")
-    } else if(estrato in 3 .. 4){
-        var valCancelar = valor * 1.0
-        println("Valor total a cancelar: $valCancelar")
-        println("Mensaje: Paga la tarifa normal")
-    } else if(estrato in 5 .. 6){
-        var valCancelar = valor * 1.25
-        println("Valor total a cancelar: $valCancelar")
-        println("Mensaje: Debe pagar 25% de recargo")
-    }
-
-    println("Deseas regresar al ménu?\n(Si / No)")
-    var menu = readln().toString().lowercase()
-    if (menu == "si"){
-        return main()
-    } else{
-        print("Fin del programa")
-    }
-}
-
-fun ejercicio4(){
-    print("Por favor ingrese su número de DNI para identificar su rango de nacimiento: ")
-    var dni = readln().toInt()
-
-    var rango = when (dni){
-        in 10000000 .. 20000000 -> "entre 1950 a 1970"
-        in 20000001 .. 40000000 -> "entre 1971 a 1990"
-        in 40000001 .. 60000000 -> "entre 1991 a 2010"
-        else -> "Error"
-    }
-
-    if (rango == "Error"){
-        print("¡$rango!")
-        println("Por favor ingrese un DNI válido")
-    } else {
-        println("Su DNI ingresado '$dni' corresponde al rango de nacimiento de $rango")
-    }
-
-    println("Deseas regresar al ménu?\n(Si / No)")
-    var menu = readln().toString().lowercase()
-    if (menu == "si"){
-        return main()
-    } else{
-        print("Fin del programa")
-    }
-}
-
-fun ejercicio5(){
-    fun menor(nivel: Int, edad: Int){
-        if (nivel == 1){
-            var puntaje = edad * 1.1
-            println("Tu puntaje es de: $puntaje")
-        } else if(nivel == 2){
-            var puntaje = edad * 1.3 + 5
-            println("Tu puntaje es de: $puntaje")
-        } else if(nivel == 3){
-            var puntaje = edad * 1.5 + 10
-            println("Tu puntaje es de: $puntaje")
-        }
-    }
-
-    fun adolescente(nivel: Int, edad: Int){
-        if (nivel == 1){
-            var puntaje = edad * 1.2
-            println("Tu puntaje es de: $puntaje")
-        } else if(nivel == 2){
-            var puntaje = edad * 1.4 + 10
-            println("Tu puntaje es de: $puntaje")
-        } else if(nivel == 3){
-            var puntaje = edad * 1.6 + 20
-            println("Tu puntaje es de: $puntaje")
-        }
-    }
-
-    fun anciano(nivel: Int, edad: Int){
-        if (nivel == 1){
-            var puntaje = edad * 1.0
-            println("Tu puntaje es de: $puntaje")
-        } else if(nivel == 2){
-            var puntaje = edad * 1.2 + 15
-            println("Tu puntaje es de: $puntaje")
-        } else if(nivel == 3){
-            var puntaje = edad * 1.4 + 25
-            println("Tu puntaje es de: $puntaje")
-        }
-    }
-
-    print("Por favor ingrese su edad: ")
-    var edad = readln().toInt()
-
-    println("Por favor ingrese su nivel educativo")
-    println("1. Para Básico")
-    println("2. Para Medio")
-    println("3. Para Avanzado")
-    var nivEdu = readln().toInt()
-
-    var rango = when(edad){
-        in 0 .. 18 -> menor(nivEdu, edad)
-        in 19 .. 25 -> adolescente(nivEdu, edad)
-        else -> anciano(nivEdu, edad)
-    }
-
-    println("Deseas regresar al ménu?\n(Si / No)")
-    var menu = readln().toString().lowercase()
-    if (menu == "si"){
-        return main()
-    } else{
-        print("Fin del programa")
-    }
-}
-
-fun ejercicio6(){
-    println("Calculadora sencilla")
-    println("Por favor ingrese 2 números:")
-
-    print("Número 1: ")
-    var num1 = readln().toDouble()
-
-    print("Número 2: ")
-    var num2 = readln().toDouble()
-
-    println("Por favor indica qué quieres hacer con estos números")
-    println("1. Para Sumar")
-    println("2. Para Restar")
-    println("3. Para multiplicar")
-    println("4. Para Dividir")
-    var opcion = readln().toInt()
-
-    if(opcion == 4 && num2.toInt() == 0) {
-        println("Para este caso, tu segundo número es 0, deseas cambiarlo?\nSi eliges no cambiarlo te mostrará un error")
-        println("(Si / No)")
-        var cambio = readln().lowercase()
-        if(cambio == "si"){
-            print("Por favor ingresa nuevamente el número 2:")
-            num2 = readln().toDouble()
-
-            if(num2.toInt() == 0){
-                println("¡Error!\nEstás intentando diidir entre 0")
-            }else{
-                var operacion = num1 / num2
-                println("El resultado de tu división es de: $operacion")
+                    when (subOpcion) {
+                        1 -> ejerciciosCiclos.ejercicio1()
+                        2 -> ejerciciosCiclos.ejercicio2()
+                        3 -> ejerciciosCiclos.ejercicio3()
+                        4 -> ejerciciosCiclos.ejercicio4()
+                        5 -> ejerciciosCiclos.ejercicio5()
+                        6 -> ejerciciosCiclos.ejercicio6()
+                        7 -> ejerciciosCiclos.ejercicio7()
+                        8 -> menuPrincipal1 = true
+                        else -> println("Opción inválida")
+                    }
+                }
             }
-        } else{
-            println("¡Error!\nNo se puede dividir entre 0")
+
+            2 -> {
+                var menuPrincipal2 = false
+                while (!menuPrincipal2) {
+                    println("+-----------------------------------------------------------------------+")
+                    println("|        Ingrese el número para el ejercicio a realizar                 |")
+                    println("+-----------------------------------------------------------------------+")
+                    println("|   1. Para ejercicio 1 - Obtener tabla de multiplicar                  |")
+                    println("|   2. Para ejercicio 2 - Mostrar suma de números pares                 |")
+                    println("|   3. Para ejercicio 3 - Llegar de número A a número B                 |")
+                    println("|   4. Para ejercicio 4 - Calificación final                            |")
+                    println("|   5. Para ejercicio 5 - Cálculo de fiesta                             |")
+                    println("|   6. Para ejercicio 6 - Lista de productos                            |")
+                    println("|   7. Volver al menú principal                                         |")
+                    println("+-----------------------------------------------------------------------+")
+                    print("Opción: ")
+                    val subOpcion = readln().toInt()
+
+                    when (subOpcion) {
+                        1 -> ejerciciosCondicionales.ejercicio1()
+                        2 -> ejerciciosCondicionales.ejercicio2()
+                        3 -> ejerciciosCondicionales.ejercicio3()
+                        4 -> ejerciciosCondicionales.ejercicio4()
+                        5 -> ejerciciosCondicionales.ejercicio5()
+                        6 -> ejerciciosCondicionales.ejercicio6()
+                        7 -> menuPrincipal2 = true
+                        else -> println("Opción inválida")
+                    }
+                }
+            }
+
+            3 -> {
+                println("Fin del programa")
+                salir = true
+            }
+
+            else -> println("Opción inválida")
         }
-    }else{
-    val (operacion, resultado) = when(opcion){
-        1 -> "Suma" to (num1 + num2)
-        2 -> "Resta" to (num1 - num2)
-        3 -> "Multiplicación" to (num1 * num2)
-        4 -> "División" to (num1 / num2)
-        else -> "Error, por favor ingresa una opción válida" to null
-    }
-        if(resultado != null) {
-            println("El resultado de tu $operacion es: $resultado")
-        } else {
-            println("Error: opción no válida.")
-        }
-    }
-
-    println("Deseas regresar al ménu?\n(Si / No)")
-    var menu = readln().toString().lowercase()
-    if (menu == "si"){
-        return main()
-    } else{
-        print("Fin del programa")
-    }
-}
-
-fun ejercicio7(){
-    println("Clasificación de temperatura")
-    println("Por favor ingrese la temperatura en °C")
-    print("°C: ")
-    var temp = readln().toDouble()
-
-    var clasificacion = when{
-        temp <= 0.0-> "congelante"
-        temp in 1.0 .. 10.0 -> "muy Fría"
-        temp in 11.0 .. 20.0 -> "fría"
-        temp in 21.0 .. 30.0 -> "templada"
-        temp in 31.0 .. 40.0 -> "caliente"
-        temp > 40.0 -> "Peligroso"
-        else -> "Error"
-    }
-    println("La temperatura $temp es considerada como $clasificacion")
-
-    println("Deseas regresar al ménu?\n(Si / No)")
-    var menu = readln().toString().lowercase()
-    if (menu == "si"){
-        return main()
-    } else{
-        print("Fin del programa")
     }
 }
