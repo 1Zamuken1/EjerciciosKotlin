@@ -29,7 +29,7 @@ El objetivo es reforzar conceptos básicos de programación, estructuras de cont
 ---
 # Créditos
 **Proyecto desarrollado por:** [`Juan Esteban Barrios P.`]()  
-**Instructor(a):** [`Mónica Bibiana Mendoza C.`]()  
+**Instructor(a):** [`Mónica Mendoza C.`]()  
 **Institución:** [`SENA - Centro de Servicios Financieros`]()  
 
 ---
