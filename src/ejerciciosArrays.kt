@@ -136,7 +136,7 @@ fun ejercicio4() {
             println("Reporte $programa")
             for ((indice, valor) in programaEstudio.withIndex()) {
                 if (valor == programa) {
-                    println("Aprendiz No.: $indice")
+                    println("Aprendiz No: $indice")
                     println("Nombre: ${nombreAprendiz[indice]}")
                     println("Edad: ${edadAprendiz[indice]}")
                     println("Género: ${generoAprendiz[indice]}")
