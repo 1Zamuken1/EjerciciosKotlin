@@ -1,6 +1,4 @@
-fun main() {
-    ejercicio4()
-}
+package ejerciciosArrays
 
 fun ejercicio1() {
     print("¿Cuántos números quieres ingresar?: ")
@@ -90,9 +88,9 @@ fun ejercicio4() {
 
             print("Ingresa el género del aprendiz No.$i: ")
             var genero = readln().toString().lowercase()
-            if (genero == "m" || genero == "masculino"){
+            if (genero == "m" || genero == "masculino") {
                 generoAprendiz.add("Masculino")
-            } else{
+            } else {
                 generoAprendiz.add("Femenino")
             }
 
@@ -102,8 +100,8 @@ fun ejercicio4() {
             println("3. curso complementario")
             print("Opción No: ")
             var opcionEstudio = readln().toIntOrNull()
-            if (opcionEstudio != null){
-                when(opcionEstudio){
+            if (opcionEstudio != null) {
+                when (opcionEstudio) {
                     1 -> programaEstudio.add("ADSO")
                     2 -> programaEstudio.add("TPS")
                     3 -> programaEstudio.add("Curso Complementario")
@@ -118,8 +116,8 @@ fun ejercicio4() {
             println("4. madrugada")
             print("Opción No: ")
             var opcionJornada = readln().toIntOrNull()
-            if (opcionJornada != null){
-                when(opcionJornada){
+            if (opcionJornada != null) {
+                when (opcionJornada) {
                     1 -> jornadaEstudio.add("Mañana")
                     2 -> jornadaEstudio.add("Tarde")
                     3 -> jornadaEstudio.add("Noche")
@@ -127,7 +125,7 @@ fun ejercicio4() {
                     else -> null
                 }
             }
-            i ++
+            i++
         }
 
         val programasUnicos = listOf("ADSO", "TPS", "Curso Complementario")
@@ -147,3 +145,91 @@ fun ejercicio4() {
         }
     }
 }
+
+data class Aprendiz(
+    val nombre: String,
+    val edad: Int,
+    val genero: String,
+    val programa: String,
+    val jornada: String
+)
+
+fun ejercicio4Data() {
+    print("¿Cuántos aprendices quiere ingresar?: ")
+    val numAprendices = readln().toInt()
+
+    val listaAprendices = mutableListOf<Aprendiz>()
+
+    for (i in 1..numAprendices) {
+        println("--- Registro del aprendiz No.$i ---")
+
+        print("Nombre: ")
+        val nombre = readln().toString().lowercase().replaceFirstChar { it.uppercase() }
+
+        print("Edad: ")
+        val edad = readln().toInt()
+
+        print("Género (m/f): ")
+        val generoInput = readln().toString().lowercase()
+        val genero = if (generoInput == "m" || generoInput == "masculino") {
+            "Masculino"
+        } else {
+            "Femenino"
+        }
+
+        println("Programa de estudio:")
+        println("1. ADSO")
+        println("2. TPS")
+        println("3. Curso Complementario")
+        print("Opción No: ")
+        val opcionEstudio = readln().toInt()
+        val programa = if (opcionEstudio == 1) {
+            "ADSO"
+        } else if (opcionEstudio == 2) {
+            "TPS"
+        } else {
+            "Curso Complementario"
+        }
+
+        println("Jornada de estudio:")
+        println("1. Mañana")
+        println("2. Tarde")
+        println("3. Noche")
+        println("4. Madrugada")
+        print("Opción No: ")
+        val opcionJornada = readln().toInt()
+        val jornada = if (opcionJornada == 1) {
+            "Mañana"
+        } else if (opcionJornada == 2) {
+            "Tarde"
+        } else if (opcionJornada == 3) {
+            "Noche"
+        } else {
+            "Madrugada"
+        }
+
+        val aprendiz = Aprendiz(nombre, edad, genero, programa, jornada)
+        listaAprendices.add(aprendiz)
+    }
+
+    println("+------------------------------------------------+")
+    println("|        LISTA DE APRENDICES POR PROGRAMA        |")
+    println("+------------------------------------------------+")
+    val programasUnicos = listaAprendices.map { it.programa }.toSet()
+
+    for (programa in programasUnicos) {
+        println("\nReporte $programa")
+        for ((indice, aprendiz) in listaAprendices.withIndex()) {
+            if (aprendiz.programa == programa) {
+                println("Aprendiz No: $indice")
+                println("Nombre: ${aprendiz.nombre}")
+                println("Edad: ${aprendiz.edad}")
+                println("Género: ${aprendiz.genero}")
+                println("Programa: ${aprendiz.programa}")
+                println("Jornada: ${aprendiz.jornada}")
+                println()
+            }
+        }
+    }
+}
+

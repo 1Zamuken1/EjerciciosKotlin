@@ -1,5 +1,7 @@
 import ejerciciosCiclos.*
 import ejerciciosCondicionales.*
+import ejerciciosArrays.*
+import Entregable.*
 
 fun main() {
     var salir = false
@@ -10,7 +12,9 @@ fun main() {
         println("+-----------------------------------------------------------------------+")
         println("|     1. Para taller de Condicionales | Fundamenteos 2                  |")
         println("|     2. Para taller de ciclos        | Fundamenteos 3                  |")
-        println("|     3. Para salir del programa                                        |")
+        println("|     3. Para taller de arrays        | Fundamenteos 4                  |")
+        println("|     4. Para entregable 1 V.2        | Entregable uno                  |")
+        println("|     5. Para salir del programa                                        |")
         println("+-----------------------------------------------------------------------+")
         print("Opción: ")
         val opcion = readln().toInt()
@@ -79,6 +83,53 @@ fun main() {
             }
 
             3 -> {
+                var menuPrincipal3 = false
+                while (!menuPrincipal3) {
+                    println("+--------------------------------------------------------------------------+")
+                    println("|           Ingrese el número para el ejercicio a realizar                 |")
+                    println("+--------------------------------------------------------------------------+")
+                    println("|   1. Para ejercicio 1 - Sumar todos los números de un array              |")
+                    println("|   2. Para ejercicio 2 - Llenar un array de tipo String                   |")
+                    println("|   3. Para ejercicio 3 - Llenar una lista mutable de tipo String          |")
+                    println("|   4. Para ejercicio 4 - Encuesta coordinación tecnológica                |")
+                    println("|   5. Para ejercicio 4 - Encuesta coordinación tecnológica con DataClass  |")
+                    println("|   6. Volver al menú principal                                            |")
+                    println("+--------------------------------------------------------------------------+")
+                    print("Opción: ")
+                    val subOpcion = readln().toInt()
+
+                    when (subOpcion) {
+                        1 -> ejerciciosArrays.ejercicio1()
+                        2 -> ejerciciosArrays.ejercicio2()
+                        3 -> ejerciciosArrays.ejercicio3()
+                        4 -> ejerciciosArrays.ejercicio4()
+                        5 -> ejerciciosArrays.ejercicio4Data()
+                        6 -> menuPrincipal3 = true
+                        else -> println("Opción inválida")
+                    }
+                }
+            }
+
+            4 -> {
+                var menuPrincipal4 = false
+                while (!menuPrincipal4){
+                    println("+-----------------------------------------------------------------------+")
+                    println("|        Ingrese el número para el ejercicio a realizar                 |")
+                    println("+-----------------------------------------------------------------------+")
+                    println("|   1. Para entregable 1 V.2 - Comprar productos y crear factura        |")
+                    println("|   2. Volver al menú principal                                         |")
+                    println("+-----------------------------------------------------------------------+")
+                    print("Opción: ")
+                    val subOpcion = readln().toInt()
+                    when (subOpcion) {
+                        1 -> Entregable.main()
+                        2 -> menuPrincipal4 = true
+                        else -> println("Opción inválida")
+                    }
+                }
+            }
+
+            5 -> {
                 println("Fin del programa")
                 salir = true
             }

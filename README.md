@@ -20,6 +20,8 @@ El objetivo es reforzar conceptos básicos de programación, estructuras de cont
   - `main` → Archivo principal con menú de ejecución  
   - `ejerciciosCiclos.kt` → Ejercicios del material 2  
   - `ejerciciosCondicionales.kt` → Ejercicios del material 3
+  - `ejerciciosArrays.kt` → Ejercicios del material 4
+  - `Entregable.kt` → Entregable de la actividad 1
 
 ---
 ## Requisitos previos
@@ -28,8 +30,8 @@ El objetivo es reforzar conceptos básicos de programación, estructuras de cont
 
 ---
 # Créditos
-**Proyecto desarrollado por:** [`Juan Esteban Barrios P.`]()  
-**Instructor(a):** [`Mónica Mendoza C.`]()  
-**Institución:** [`SENA - Centro de Servicios Financieros`]()  
+**Proyecto desarrollado por:** [`Juan Esteban Barrios P.`](https://github.com/1Zamuken1)  
+**Instructor(a):** [`Mónica Mendoza C.`](./src/Main.kt)  
+**Institución:** [`SENA - Centro de Servicios Financieros`](./src/Main.kt)  
 
 ---
