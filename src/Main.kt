@@ -3,6 +3,7 @@ import ejerciciosCondicionales.*
 import ejerciciosArrays.*
 import Entregable.*
 import ejerciciosFunciones.*
+import ejerciciosClases.*
 
 fun main() {
     var salir = false
@@ -16,7 +17,8 @@ fun main() {
         println("|     3. Para taller de arrays        | Fundamenteos 4                  |")
         println("|     4. Para entregable 1 V.2        | Entregable uno                  |")
         println("|     5. Para taller de funciones     | Fundamenteos 5                  |")
-        println("|     6. Para salir del programa                                        |")
+        println("|     6. Para taller de clases        | Fundamenteos 6                  |")
+        println("|     7. Para salir del programa                                        |")
         println("+-----------------------------------------------------------------------+")
         print("Opción: ")
         val opcion = readln().toInt()
@@ -142,7 +144,7 @@ fun main() {
                     println("|   3. Ejercicio 3 - Nombre y edad                                         |")
                     println("|   4. Ejercicio 4 - Par o impar                                           |")
                     println("|   5. Ejercicio 5 - Mayor o menor                                         |")
-                    println("|   6. Ejercicio 6 - Producto y descuento                                  |")
+                    println("|   6. Ejercicio 6 - ejerciciosFunciones.Producto y descuento              |")
                     println("|   7. Ejercicio 7 - N cantidad de números y retorno suma                  |")
                     println("|   8. Ejercicio 8 - cantidad números y trae cantidad de pares e impares   |")
                     println("|   9. Ejercicio 9 - Tabla de multiplicar                                  |")
@@ -218,8 +220,11 @@ fun main() {
             }
 
 
+            6 -> ejerciciosClases.Menu()
 
-            6 -> {
+
+
+            7 -> {
                 println("Fin del programa")
                 salir = true
             }

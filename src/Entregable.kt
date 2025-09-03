@@ -191,7 +191,7 @@ fun tienda() {
                             println("Cantidad inválida.")
                         }
                     } else {
-                        println("Producto inválido.")
+                        println("ejerciciosFunciones.Producto inválido.")
                     }
 
                     if (seguirCompra) {
